@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231123 10:39:48.729" rpa="false" schemaversion="4">
+<suite id="s1" name="Builtin" source="C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\builtin.robot">
+<test id="s1-t1" name="Final Frontier" line="2">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${quote}</arg>
+<arg>Space: the final frontier. These are the voyages of the starship Enterprise. Its five-year mission: to explore strange new worlds. To seek out new life and new civilizations. To boldly go where no man has gone before!</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20231123 10:39:48.744" level="INFO">${quote} = Space: the final frontier. These are the voyages of the starship Enterprise. Its five-year mission: to explore strange new worlds. To seek out new life and new civilizations. To boldly go where no man...</msg>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${quote}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${quote}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20231123 10:39:48.744" level="INFO">Length is 217</msg>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<kw name="Should Match Regexp" library="BuiltIn">
+<arg>${quote}</arg>
+<arg>^Space</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<kw name="Should Match Regexp" library="BuiltIn">
+<arg>${quote}</arg>
+<arg>to explore strange new worlds</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<arg>${quote}</arg>
+<arg>Space: the final frontier. These are the voyages of the starship Enterprise. Its continuing mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no one has gone before.</arg>
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<kw name="Should Match Regexp" library="BuiltIn">
+<arg>${quote}</arg>
+<arg>before!$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</kw>
+<status status="PASS" starttime="20231123 10:39:48.744" endtime="20231123 10:39:48.744"/>
+</test>
+<status status="PASS" starttime="20231123 10:39:48.729" endtime="20231123 10:39:48.744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Builtin">Builtin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
