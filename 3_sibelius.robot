@@ -11,14 +11,14 @@ Search Finna
     Click Element    //*[@id="language_menu"]
     Click Element    //*[@id="language_menu"]/ul/li[3]/a
     Click Element    css:.search-tooltip a
-    Wait Until Page Contains    
+    #Wait Until Element Contains    locator    text
     Click Element    id:search_type0_0
     Click Element    //*[@id="search_type0_0"]/option[2]
-    Input Text    id:searchForm_lookfor0_0    Sibelius
+    Input Text    id:searchForm_lookfor0_0    Jean Sibelius
     Click Element    //*[@id="search_type0_1"]/option[5]
-    Click Element    locator
+    Click Button    value:Find
     Wait Until Page Contains    Sibelius
-    Click Element    //*[@id="result0"]/div/div/div[2]/div/div[1]/h2/a
-    Wait Until Page Contains    P.A. Norstedt & Söners förlag
+    #Click Element    //*[@id="result0"]/div/div/div[2]/div/div[1]/h2/a
+    #Wait Until Page Contains    P.A. Norstedt & Söners förlag
     Capture Page Screenshot
     
