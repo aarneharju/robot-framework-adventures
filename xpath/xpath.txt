@@ -1,0 +1,19 @@
+# Locator madness - Iltasanomat.fi
+//li[contains(@class,"generic-list-item")]
+//li[contains(@class,"generic-list-item")][10]
+//li[contains(@class,"generic-list-item")][last()]
+
+# Locator madness - Ampparit.com
+//a[contains(@href,"/ruotsi")]
+//a[contains(@class,"menu-item__link") and contains(@href,"/musiikki")]
+
+# Locator madness - Untappd.com
+//*[contains(@class,'beer-item')][1]
+//*[contains(@class,'style') and contains(text(),'Stout')]
+//*[contains(@class,'style') and contains(text(),'Stout')]/ancestor::*[contains(@class,'beer-item')]
+//*[contains(@class,'style') and contains(text(),'Stout')]/ancestor::*[contains(@class,'beer-item')]//img[contains(@alt,'Kentucky Brunch')]
+
+# Locator madness - YLE TV Opas
+//*[@id='yle-header-main-link-ylefi']
+//time[contains(@datetime,'20:29')]
+//time[contains(@datetime,'20:29')]/following-sibling::*/descendant::*[contains(@class,'programTitle')]/text()
