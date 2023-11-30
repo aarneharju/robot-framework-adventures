@@ -1,106 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231129 16:22:46.033" rpa="false" schemaversion="4">
-<suite id="s1" name="04 Operatingsystem" source="C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\04_operatingsystem.robot">
-<test id="s1-t1" name="Destroy the One Ring" line="5">
-<kw name="Create Directory" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire</arg>
-<doc>Creates the specified directory.</doc>
-<msg timestamp="20231129 16:22:46.051" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.051" endtime="20231129 16:22:46.051"/>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231130 15:13:50.957" rpa="false" schemaversion="4">
+<suite id="s1" name="05 Mylibrary" source="C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\05_mylibrary.robot">
+<test id="s1-t1" name="Library test" line="5">
+<kw name="Set Variable" library="BuiltIn">
+<var>${myString}</var>
+<arg>What sorcery is this?</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231130 15:13:50.973" level="INFO">${myString} = What sorcery is this?</msg>
+<status status="PASS" starttime="20231130 15:13:50.973" endtime="20231130 15:13:50.973"/>
 </kw>
-<kw name="Create Directory" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire/Frodo</arg>
-<doc>Creates the specified directory.</doc>
-<msg timestamp="20231129 16:22:46.052" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.052" endtime="20231129 16:22:46.052"/>
+<kw name="Count Words" library="MyLib">
+<var>${numberOfWords}</var>
+<arg>${myString}</arg>
+<doc>:param paragraph: String
+:return: Number of words</doc>
+<msg timestamp="20231130 15:13:50.974" level="INFO">${numberOfWords} = 4</msg>
+<status status="PASS" starttime="20231130 15:13:50.973" endtime="20231130 15:13:50.974"/>
 </kw>
-<kw name="Create File" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire/Frodo/OneRing.txt</arg>
-<arg>One ring to rule them all, one ring to find them, One ring to bring them all and in the darkness bind them.</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<msg timestamp="20231129 16:22:46.053" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.053" endtime="20231129 16:22:46.054"/>
-</kw>
-<kw name="Should Exist" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire/Frodo/OneRing.txt</arg>
-<doc>Fails unless the given path (file or directory) exists.</doc>
-<msg timestamp="20231129 16:22:46.054" level="INFO" html="true">Path '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt&lt;/a&gt;' exists.</msg>
-<status status="PASS" starttime="20231129 16:22:46.054" endtime="20231129 16:22:46.054"/>
-</kw>
-<kw name="Get File" library="OperatingSystem">
-<var>${onering}</var>
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire/Frodo/OneRing.txt</arg>
-<doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20231129 16:22:46.055" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt&lt;/a&gt;'.</msg>
-<msg timestamp="20231129 16:22:46.055" level="INFO">${onering} = One ring to rule them all, one ring to find them, One ring to bring them all and in the darkness bind them.</msg>
-<status status="PASS" starttime="20231129 16:22:46.054" endtime="20231129 16:22:46.055"/>
-</kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${onering}</arg>
-<arg>One ring to rule them all, one ring to find them, One ring to bring them all and in the darkness bind them.</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20231129 16:22:46.055" endtime="20231129 16:22:46.055"/>
-</kw>
-<kw name="Create Directory" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom</arg>
-<doc>Creates the specified directory.</doc>
-<msg timestamp="20231129 16:22:46.056" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.056" endtime="20231129 16:22:46.056"/>
-</kw>
-<kw name="Move File" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire/Frodo/OneRing.txt</arg>
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom/OneRing.txt</arg>
-<doc>Moves the source file into the destination.</doc>
-<msg timestamp="20231129 16:22:46.062" level="INFO" html="true">Moved file from '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire\Frodo\OneRing.txt&lt;/a&gt;' to '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.056" endtime="20231129 16:22:46.062"/>
-</kw>
-<kw name="File Should Exist" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom/OneRing.txt</arg>
-<doc>Fails unless the given ``path`` points to an existing file.</doc>
-<msg timestamp="20231129 16:22:46.062" level="INFO" html="true">File '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt&lt;/a&gt;' exists.</msg>
-<status status="PASS" starttime="20231129 16:22:46.062" endtime="20231129 16:22:46.062"/>
-</kw>
-<kw name="Remove File" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom/OneRing.txt</arg>
-<doc>Removes a file with the given path.</doc>
-<msg timestamp="20231129 16:22:46.063" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.063" endtime="20231129 16:22:46.063"/>
-</kw>
-<kw name="File Should Not Exist" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom/OneRing.txt</arg>
-<doc>Fails if the given path points to an existing file.</doc>
-<msg timestamp="20231129 16:22:46.063" level="INFO" html="true">File '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom\OneRing.txt&lt;/a&gt;' does not exist.</msg>
-<status status="PASS" starttime="20231129 16:22:46.063" endtime="20231129 16:22:46.063"/>
-</kw>
-<kw name="Remove Directory" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire</arg>
-<arg>true</arg>
-<doc>Removes the directory pointed to by the given ``path``.</doc>
-<msg timestamp="20231129 16:22:46.066" level="INFO" html="true">Removed directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.065" endtime="20231129 16:22:46.066"/>
-</kw>
-<kw name="Remove Directory" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom</arg>
-<arg>true</arg>
-<doc>Removes the directory pointed to by the given ``path``.</doc>
-<msg timestamp="20231129 16:22:46.067" level="INFO" html="true">Removed directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231129 16:22:46.066" endtime="20231129 16:22:46.067"/>
-</kw>
-<kw name="Directory Should Not Exist" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Shire</arg>
-<doc>Fails if the given path points to an existing file.</doc>
-<msg timestamp="20231129 16:22:46.067" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Shire&lt;/a&gt;' does not exist.</msg>
-<status status="PASS" starttime="20231129 16:22:46.067" endtime="20231129 16:22:46.067"/>
-</kw>
-<kw name="Directory Should Not Exist" library="OperatingSystem">
-<arg>C:\\Users\\aharju\\Documents\\RobotFramework\\robot-framework-adventures\\builtin libraries/Mt Doom</arg>
-<doc>Fails if the given path points to an existing file.</doc>
-<msg timestamp="20231129 16:22:46.067" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom"&gt;C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\builtin libraries\Mt Doom&lt;/a&gt;' does not exist.</msg>
-<status status="PASS" starttime="20231129 16:22:46.067" endtime="20231129 16:22:46.067"/>
-</kw>
-<status status="PASS" starttime="20231129 16:22:46.051" endtime="20231129 16:22:46.068"/>
+<status status="PASS" starttime="20231130 15:13:50.972" endtime="20231130 15:13:50.974"/>
 </test>
-<status status="PASS" starttime="20231129 16:22:46.034" endtime="20231129 16:22:46.069"/>
+<status status="PASS" starttime="20231130 15:13:50.958" endtime="20231130 15:13:50.975"/>
 </suite>
 <statistics>
 <total>
@@ -109,7 +28,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="04 Operatingsystem">04 Operatingsystem</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="05 Mylibrary">05 Mylibrary</stat>
 </suite>
 </statistics>
 <errors>
