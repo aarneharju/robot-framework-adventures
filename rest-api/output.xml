@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231130 17:01:09.390" rpa="false" schemaversion="4">
+<suite id="s1" name="01 Punk-Api" source="C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\rest-api\01_punk-api.robot">
+<test id="s1-t1" name="Get First Beer" line="8">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${api_url}/beers/1</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231130 17:01:09.969" level="INFO">GET Request : url=https://api.punkapi.com/v2/beers/1 
+ path_url=/v2/beers/1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231130 17:01:09.969" level="INFO">GET Response : url=https://api.punkapi.com/v2/beers/1 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 30 Nov 2023 15:01:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept', 'Age': '1539', 'Cache-Control': 'public, max-age=14400, must-revalidate', 'Content-Encoding': 'gzip', 'etag': 'W/"665-a4PwNgVseDJk55YVoajv4/LcqL8"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '3600', 'x-ratelimit-remaining': '3038', 'x-ratelimit-reset': '1701355313', 'x-vercel-cache': 'MISS', 'x-vercel-id': 'fra1::sfo1::2qj5t-1701354931191-8277f2d55bd6', 'x-xss-protection': '1; mode=block', 'CF-Cache-Status': 'HIT', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=N01kFQsqsYUypGJjLtEvKWVSmOBSOgLFSzuouGMkeC%2F6ArLuYj3E72rBH%2Bwfy7foj2T07qwqJsTTArMG%2BQSGEWLGwbVRc7VXED%2BZ1eS2Y6fUEqCHYIQBySjaOhkZV%2BeY3HY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '82e3f6d56fca66df-AMS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"name":"Buzz","tagline":"A Real Bitter Experience.","first_brewed":"09/2007","description":"A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.","image_url":"https://images.punkapi.com/v2/keg.png","abv":4.5,"ibu":60,"target_fg":1010,"target_og":1044,"ebc":20,"srm":10,"ph":4.4,"attenuation_level":75,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":64,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":3.3,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.2,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.4,"unit":"kilograms"}}],"hops":[{"name":"Fuggles","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"First Gold","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Fuggles","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"First Gold","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Cascade","amount":{"value":37.5,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Spicy chicken tikka masala","Grilled chicken quesadilla","Caramel toffee cake"],"brewers_tips":"The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.","contributed_by":"Sam Mason &lt;samjbmason&gt;"}] 
+ </msg>
+<msg timestamp="20231130 17:01:09.969" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:09.469" endtime="20231130 17:01:09.969"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:09.971" level="INFO">&lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:09.971" endtime="20231130 17:01:09.971"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:09.469" endtime="20231130 17:01:09.974"/>
+</test>
+<test id="s1-t2" name="Get Random Beer" line="12">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${api_url}/beers/random</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231130 17:01:10.677" level="INFO">GET Request : url=https://api.punkapi.com/v2/beers/random 
+ path_url=/v2/beers/random 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231130 17:01:10.677" level="INFO">GET Response : url=https://api.punkapi.com/v2/beers/random 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 30 Nov 2023 15:01:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept', 'Age': '0', 'Cache-Control': 'public, max-age=0, must-revalidate', 'Content-Encoding': 'gzip', 'etag': 'W/"8f1-MNFiqtpdTRv02mtnoVAVjlg2t/0"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '3600', 'x-ratelimit-remaining': '3295', 'x-ratelimit-reset': '1701358915', 'x-vercel-cache': 'MISS', 'x-vercel-id': 'fra1::sfo1::wp45t-1701356471164-425268e3336c', 'x-xss-protection': '1; mode=block', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=whcjL1hBhh1nmCc4cTmptUSVvJwnoiY51KgWFG6jGEZcIAR9SmeYvG7pclA70BV6SooKHFVQRsSf%2FeHJBLcFU8VHUTU9eXC8a4AQyEz5SVpuAlxwgWSRHe%2Be3MSw1opWXg0%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82e3f6d88b48b7f8-AMS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":187,"name":"Lichtenstein Pale Ale","tagline":"Us-Hopped Rye Pale Ale.","first_brewed":"01/2013","description":"Dry-hopped with some of our hop heroes, bringing incredibly fruity aromas of zesty orange, pithy grapefruit, pungent pine and resin, backed up with spicy, toasty malt flavours of toffee, biscuit, rye bread and toast crust.","image_url":"https://images.punkapi.com/v2/187.png","abv":5.2,"ibu":50,"target_fg":1010,"target_og":1050,"ebc":17,"srm":8.5,"ph":4.4,"attenuation_level":80,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":3.38,"unit":"kilograms"}},{"name":"Crystal 150","amount":{"value":0.13,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.38,"unit":"kilograms"}},{"name":"Rye","amount":{"value":0.25,"unit":"kilograms"}}],"hops":[{"name":"Centennial","amount":{"value":12.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Simcoe","amount":{"value":6.25,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Cascade","amount":{"value":7.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Amarillo","amount":{"value":7.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Simcoe","amount":{"value":6.25,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Cascade","amount":{"value":7.5,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Amarillo","amount":{"value":7.5,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Simcoe","amount":{"value":25,"unit":"grams"},"add":"dry hop","attribute":"aroma"},{"name":"Cascade","amount":{"value":25,"unit":"grams"},"add":"dry hop","attribute":"aroma"},{"name":"Centennial","amount":{"value":25,"unit":"grams"},"add":"dry hop","attribute":"aroma"},{"name":"Amarillo","amount":{"value":25,"unit":"grams"},"add":"dry hop","attribute":"aroma"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Spicy fish tacos","Bacon mac 'n' cheese","Pear crumble"],"brewers_tips":"Munich malt adds a biscuit sweetness, while the rye adds a spicy bready character.","contributed_by":"Sam Mason &lt;samjbmason&gt;"}] 
+ </msg>
+<msg timestamp="20231130 17:01:10.678" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:09.982" endtime="20231130 17:01:10.678"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231130 17:01:10.681" level="INFO">@{data} = [ {'id': 187, 'name': 'Lichtenstein Pale Ale', 'tagline': 'Us-Hopped Rye Pale Ale.', 'first_brewed': '01/2013', 'description': 'Dry-hopped with some of our hop heroes, bringing incredibly fruity aroma...</msg>
+<status status="PASS" starttime="20231130 17:01:10.680" endtime="20231130 17:01:10.682"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${beer_name}</var>
+<arg>${data}[0][name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231130 17:01:10.685" level="INFO">${beer_name} = Lichtenstein Pale Ale</msg>
+<status status="PASS" starttime="20231130 17:01:10.685" endtime="20231130 17:01:10.685"/>
+</kw>
+<tag>random</tag>
+<status status="PASS" starttime="20231130 17:01:09.982" endtime="20231130 17:01:10.688"/>
+</test>
+<test id="s1-t3" name="Get Rabiator Beer" line="18">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${api_url}/beers</arg>
+<arg>params=beer_name=Rabiator</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231130 17:01:11.156" level="INFO">GET Request : url=https://api.punkapi.com/v2/beers?beer_name=Rabiator 
+ path_url=/v2/beers?beer_name=Rabiator 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231130 17:01:11.156" level="INFO">GET Response : url=https://api.punkapi.com/v2/beers?beer_name=Rabiator 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 30 Nov 2023 15:01:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept', 'Age': '861', 'Cache-Control': 'public, max-age=14400, must-revalidate', 'Content-Encoding': 'gzip', 'etag': 'W/"553-MtZmsL78ifQGe39W9PkZv48Q2N4"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '3600', 'x-ratelimit-remaining': '3527', 'x-ratelimit-reset': '1701358915', 'x-vercel-cache': 'MISS', 'x-vercel-id': 'fra1::sfo1::fznzc-1701355609958-15f6774d5d0b', 'x-xss-protection': '1; mode=block', 'CF-Cache-Status': 'HIT', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Ew87fNWFLihWcQBFLordoaWOcQMvQDfBEUHTONI62EmyHWB74pcnT1wXPx30wZPdT68dnKsApRHEdlUO%2BvllNe3HrHvy8oSewd5Q%2FzLI8C9qUrxEI9NPADmYV4h7TcSdNMY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '82e3f6dcdbcb6626-AMS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":20,"name":"Rabiator","tagline":"Imperial Wheat Beer","first_brewed":"03/2011","description":"Imperial Wheat beer / Weizenbock brewed by a homesick German in leather trousers. Think banana bread, bubble gum and David Hasselhoff.","image_url":"https://images.punkapi.com/v2/keg.png","abv":10.27,"ibu":26,"target_fg":1014,"target_og":1092,"ebc":24,"srm":12,"ph":4.4,"attenuation_level":85,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":64,"unit":"celsius"},"duration":60}],"fermentation":{"temp":{"value":21,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":5.63,"unit":"kilograms"}},{"name":"Wheat","amount":{"value":0.69,"unit":"kilograms"}},{"name":"Crystal","amount":{"value":0.63,"unit":"kilograms"}}],"hops":[{"name":"Columbus","amount":{"value":12.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Hersbrucker","amount":{"value":12.5,"unit":"grams"},"add":"middle","attribute":"flavour"}],"yeast":"Wyeast 3333 - German Wheat™"},"food_pairing":["Grilled portabello mushroom burger","Chicken sausages with creamy mash","Caramel and banana meringue pie"],"brewers_tips":"If you are struggling to get that authentic head retention increase your mash temperature to about 70°C.","contributed_by":"Sam Mason &lt;samjbmason&gt;"}] 
+ </msg>
+<msg timestamp="20231130 17:01:11.157" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:10.694" endtime="20231130 17:01:11.157"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231130 17:01:11.160" level="INFO">@{data} = [ {'id': 20, 'name': 'Rabiator', 'tagline': 'Imperial Wheat Beer', 'first_brewed': '03/2011', 'description': 'Imperial Wheat beer / Weizenbock brewed by a homesick German in leather trousers. Think ba...</msg>
+<status status="PASS" starttime="20231130 17:01:11.159" endtime="20231130 17:01:11.160"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${beer_name}</var>
+<arg>${data}[0][name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231130 17:01:11.161" level="INFO">${beer_name} = Rabiator</msg>
+<status status="PASS" starttime="20231130 17:01:11.161" endtime="20231130 17:01:11.161"/>
+</kw>
+<tag>rabiator</tag>
+<status status="PASS" starttime="20231130 17:01:10.694" endtime="20231130 17:01:11.163"/>
+</test>
+<test id="s1-t4" name="Get All Beers With Hersbrucker Hops" line="24">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${api_url}/beers</arg>
+<arg>params=hops=hersbrucker</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231130 17:01:11.602" level="INFO">GET Request : url=https://api.punkapi.com/v2/beers?hops=hersbrucker 
+ path_url=/v2/beers?hops=hersbrucker 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231130 17:01:11.602" level="INFO">GET Response : url=https://api.punkapi.com/v2/beers?hops=hersbrucker 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 30 Nov 2023 15:01:12 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept', 'Age': '542423', 'Cache-Control': 'public, max-age=14400, must-revalidate', 'Content-Encoding': 'gzip', 'etag': 'W/"2ad6-fHkP0Gke0GJibywKsGE6TSSTW6I"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '3600', 'x-ratelimit-remaining': '3513', 'x-ratelimit-reset': '1700816756', 'x-vercel-cache': 'MISS', 'x-vercel-id': 'fra1::sfo1::kl5fg-1700814049579-aa37013c3e33', 'x-xss-protection': '1; mode=block', 'CF-Cache-Status': 'HIT', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=2DOb1rykPjumHRqHEEfPaFwHkK1rb2ngboqN9m5%2BzUuN%2BsiyPOh2ppUTbawlUsApiLaRb8K5EC%2FokkYwYDHozLPgHvpwzVLw8TbH%2FNrLxZ4vsgrCRwlysXvOLLdafzBFz2M%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '82e3f6df9f5466a3-AMS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":8,"name":"Fake Lager","tagline":"Bohemian Pilsner.","first_brewed":"03/2013","description":"Fake is the new black. Fake is where it is at. Fake Art, fake brands, fake breasts, and fake lager. We want to play our part in the ugly fallout from the Lager Dream. Say hello to Fake Lager – a zesty, floral 21st century faux masterpiece with added BrewDog bitterness.","image_url":"https://images.punkapi.com/v2/8.png","abv":4.7,"ibu":40,"target_fg":1010,"target_og":1046,"ebc":12,"srm":6,"ph":4.4,"attenuation_level":78,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":10,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":3.33,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.42,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.28,"unit":"kilograms"}},{"name":"Acidulated Malt","amount":{"value":0.07,"unit":"kilograms"}}],"hops":[{"name":"Magnum","amount":{"value":7.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Magnum","amount":{"value":5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":6.25,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Saaz","amount":{"value":6.25,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":18.75,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Saaz","amount":{"value":18.75,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 2007 - Pilsen Lager™"},"food_pairing":["Fried crab cakes with avocado salsa","Spicy shredded pork roll with hot dipping sauce","Key lime pie"],"brewers_tips":"Once the primary fermentation is complete get this beer as cold as you can and let it mature for as long as you've got.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":20,"name":"Rabiator","tagline":"Imperial Wheat Beer","first_brewed":"03/2011","description":"Imperial Wheat beer / Weizenbock brewed by a homesick German in leather trousers. Think banana bread, bubble gum and David Hasselhoff.","image_url":"https://images.punkapi.com/v2/keg.png","abv":10.27,"ibu":26,"target_fg":1014,"target_og":1092,"ebc":24,"srm":12,"ph":4.4,"attenuation_level":85,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":64,"unit":"celsius"},"duration":60}],"fermentation":{"temp":{"value":21,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":5.63,"unit":"kilograms"}},{"name":"Wheat","amount":{"value":0.69,"unit":"kilograms"}},{"name":"Crystal","amount":{"value":0.63,"unit":"kilograms"}}],"hops":[{"name":"Columbus","amount":{"value":12.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Hersbrucker","amount":{"value":12.5,"unit":"grams"},"add":"middle","attribute":"flavour"}],"yeast":"Wyeast 3333 - German Wheat™"},"food_pairing":["Grilled portabello mushroom burger","Chicken sausages with creamy mash","Caramel and banana meringue pie"],"brewers_tips":"If you are struggling to get that authentic head retention increase your mash temperature to about 70°C.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":104,"name":"India Pale Weizen (w/ Weihenstephan)","tagline":"BrewDog Versus Weihenstephan.","first_brewed":"09/2014","description":" BrewDog vs. Weihenstephan India Pale Weizen kicked off a new direction for our collaborations. We took a simple concept (by our standards) and teamed up with the oldest brewery in the world to brew a mash-up beer using the signature styles of both breweries. India Pale Weizen has classic base hefeweizen aromas and flavours of banana, clove and bubblegum, with a distinctive haziness. Layered on top of this is a tapestry of US citrus hop character. India Pale Weizen is a perfect symbiosis of traditional and modern brewing.","image_url":"https://images.punkapi.com/v2/104.png","abv":6.2,"ibu":50,"target_fg":1010,"target_og":1056,"ebc":35,"srm":17.5,"ph":4,"attenuation_level":85,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":null}],"fermentation":{"temp":{"value":21,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":3,"unit":"kilograms"}},{"name":"Wheat","amount":{"value":2,"unit":"kilograms"}},{"name":"Dark Crystal","amount":{"value":0.08,"unit":"kilograms"}}],"hops":[{"name":"Cascade","amount":{"value":6,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Cascade","amount":{"value":6,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Saaz","amount":{"value":12.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":12.5,"unit":"grams"},"add":"middle","attribute":"flavour"}],"yeast":"Wyeast 3638 - Bavarian Wheat™"},"food_pairing":["Korean barbecue nachos","Beef pho soup","Waffles with caramelised apple and powdered sugar"],"brewers_tips":"Let the fermentation temperature creep up a couple of degrees higher than normal to create the characteristic banana and bubblegum aromas.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":123,"name":"Candy Kaiser","tagline":"NorDdeutsches Retro Altbier.","first_brewed":"08/2015","description":"In this northern German style retro altbier, we’ve dialled down the dry-hops to zero, but cranked up the malt to create massive aromas. Toasty, toffee and floral notes duke it out for supremacy in the headspace of your glass. When this all hits your palate, the steely bitterness combines with the rich dry malt and the subtle alcohol warmth in a full throttle attack on your taste buds.","image_url":"https://images.punkapi.com/v2/123.png","abv":5.2,"ibu":45,"target_fg":1009,"target_og":1049,"ebc":45,"srm":22.5,"ph":4.2,"attenuation_level":81.6,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":null}],"fermentation":{"temp":{"value":14,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Pale Ale","amount":{"value":3.94,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.44,"unit":"kilograms"}},{"name":"Carafa Special Malt Type 1","amount":{"value":0.13,"unit":"kilograms"}}],"hops":[{"name":"Magnum","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Hersbrucker","amount":{"value":25,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Aged gouda","German bratwurst sausage","Poached pear fritters"],"brewers_tips":"Make sure that the boil is vigorous enough to roll. This means that high flavours are active, and undesirable compounds like DMS are not left in the beer.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":159,"name":"Black Tokyo Horizon (w/Nøgne Ø &amp; Mikkeller)","tagline":"Imperial Stout Collaboration.","first_brewed":"12/2010","description":"Special Collaboration between Nøgne, Mikkeller and BrewDog which is a recipe based on all three brewers’ big stouts; Nøgne Ø Dark Horizon, Mikkeller Black and BrewDog Tokyo*.","image_url":"https://images.punkapi.com/v2/159.png","abv":17.2,"ibu":75,"target_fg":1030,"target_og":1156,"ebc":128,"srm":64,"ph":4.4,"attenuation_level":80.8,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":120}],"fermentation":{"temp":{"value":21,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":4.38,"unit":"kilograms"}},{"name":"Carafa Special Malt Type 1","amount":{"value":1.5,"unit":"kilograms"}},{"name":"Flaked Oats","amount":{"value":0.56,"unit":"kilograms"}},{"name":"Smoked Malt","amount":{"value":0.25,"unit":"kilograms"}},{"name":"Crystal 150","amount":{"value":0.25,"unit":"kilograms"}}],"hops":[{"name":"Columbus","amount":{"value":37.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Columbus","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"First Gold","amount":{"value":18.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Motueka","amount":{"value":12.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":12.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"First Gold","amount":{"value":18.5,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Motueka","amount":{"value":12.5,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":12.5,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1272 - American Ale II™"},"food_pairing":["Truffle oil filet mignon","Sweet sticky beef brisket","Chocolate and dark cherry fondant"],"brewers_tips":"Extend the mash time as much as possible to create maximum fermentable sugars. Boil for longer in the kettle to help evaporate off the water, and make the sugar concentration stronger.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":163,"name":"This. Is. Lager","tagline":"21st Century Pilsner. Sharp. Robust. Honest.","first_brewed":"08/2014","description":"Brewed with 100% malt, ten times the hops of most industrial lagers and cold-conditioned for five weeks, this spicy, robust Pilsner is lager reborn. Expect a robust, full-bodied malt character on the front of the tongue, spicy citrus notes as it goes back through the palate and an assertive bitter finish with a lemon and pepper character to round things off.","image_url":"https://images.punkapi.com/v2/163.png","abv":4.7,"ibu":37,"target_fg":1007,"target_og":1043,"ebc":10,"srm":6,"ph":4.2,"attenuation_level":83.7,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":75}],"fermentation... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20231130 17:01:11.603" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:11.171" endtime="20231130 17:01:11.603"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231130 17:01:11.606" level="INFO">@{data} = [ {'id': 8, 'name': 'Fake Lager', 'tagline': 'Bohemian Pilsner.', 'first_brewed': '03/2013', 'description': 'Fake is the new black. Fake is where it is at. Fake Art, fake brands, fake breasts, and fak...</msg>
+<status status="PASS" starttime="20231130 17:01:11.605" endtime="20231130 17:01:11.606"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${beer_name}</var>
+<arg>${data}[0][name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231130 17:01:11.609" level="INFO">${beer_name} = Fake Lager</msg>
+<status status="PASS" starttime="20231130 17:01:11.609" endtime="20231130 17:01:11.609"/>
+</kw>
+<for flavor="IN">
+<var>${beer}</var>
+<value>@{data}</value>
+<iter>
+<var name="${beer}">{'id': 8, 'name': 'Fake Lager', 'tagline': 'Bohemian Pilsner.', 'first_brewed': '03/2013', 'description': 'Fake is the new black. Fake is where it is at. Fake Art, fake brands, fake breasts, and fake ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:11.611" level="INFO">Fake Lager</msg>
+<status status="PASS" starttime="20231130 17:01:11.611" endtime="20231130 17:01:11.611"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:11.611" endtime="20231130 17:01:11.612"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:11.611" endtime="20231130 17:01:11.612"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 20, 'name': 'Rabiator', 'tagline': 'Imperial Wheat Beer', 'first_brewed': '03/2011', 'description': 'Imperial Wheat beer / Weizenbock brewed by a homesick German in leather trousers. Think bana...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:11.613" level="INFO">Rabiator</msg>
+<status status="PASS" starttime="20231130 17:01:11.613" endtime="20231130 17:01:11.613"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:11.613" endtime="20231130 17:01:11.614"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:11.613" endtime="20231130 17:01:11.614"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 104, 'name': 'India Pale Weizen (w/ Weihenstephan)', 'tagline': 'BrewDog Versus Weihenstephan.', 'first_brewed': '09/2014', 'description': ' BrewDog vs. Weihenstephan India Pale Weizen kicked o...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:11.614" level="INFO">India Pale Weizen (w/ Weihenstephan)</msg>
+<status status="PASS" starttime="20231130 17:01:11.614" endtime="20231130 17:01:11.614"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:11.614" endtime="20231130 17:01:11.615"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:11.614" endtime="20231130 17:01:11.615"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 123, 'name': 'Candy Kaiser', 'tagline': 'NorDdeutsches Retro Altbier.', 'first_brewed': '08/2015', 'description': 'In this northern German style retro altbier, weâ\x80\x99ve dialled down the dr...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:11.616" level="INFO">Candy Kaiser</msg>
+<status status="PASS" starttime="20231130 17:01:11.616" endtime="20231130 17:01:11.616"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:11.616" endtime="20231130 17:01:11.617"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:11.616" endtime="20231130 17:01:11.617"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 159, 'name': 'Black Tokyo Horizon (w/NÃ¸gne Ã\x98 &amp; Mikkeller)', 'tagline': 'Imperial Stout Collaboration.', 'first_brewed': '12/2010', 'description': 'Special Collaboration between NÃ¸gne, Mik...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:11.617" level="INFO">Black Tokyo Horizon (w/NÃ¸gne Ã &amp; Mikkeller)</msg>
+<status status="PASS" starttime="20231130 17:01:11.617" endtime="20231130 17:01:11.617"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:11.617" endtime="20231130 17:01:11.618"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:11.617" endtime="20231130 17:01:11.618"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 163, 'name': 'This. Is. Lager', 'tagline': '21st Century Pilsner. Sharp. Robust. Honest.', 'first_brewed': '08/2014', 'description': 'Brewed with 100% malt, ten times the hops of most industria...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:11.619" level="INFO">This. Is. Lager</msg>
+<status status="PASS" starttime="20231130 17:01:11.619" endtime="20231130 17:01:11.619"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:11.619" endtime="20231130 17:01:11.620"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:11.618" endtime="20231130 17:01:11.620"/>
+</iter>
+<status status="PASS" starttime="20231130 17:01:11.611" endtime="20231130 17:01:11.620"/>
+</for>
+<tag>hersbrucker</tag>
+<status status="PASS" starttime="20231130 17:01:11.170" endtime="20231130 17:01:11.622"/>
+</test>
+<test id="s1-t5" name="Get All Beers With Alcohol Content Less Than 5.5" line="34">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${api_url}/beers</arg>
+<arg>params=abv_lt=5.5</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231130 17:01:12.276" level="INFO">GET Request : url=https://api.punkapi.com/v2/beers?abv_lt=5.5 
+ path_url=/v2/beers?abv_lt=5.5 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231130 17:01:12.276" level="INFO">GET Response : url=https://api.punkapi.com/v2/beers?abv_lt=5.5 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 30 Nov 2023 15:01:12 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept', 'Cache-Control': 'public, max-age=14400, must-revalidate', 'Content-Encoding': 'gzip', 'etag': 'W/"b2fb-gdezudo8C8Q/5EXr4eUygXP6dEQ"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '3600', 'x-ratelimit-remaining': '3294', 'x-ratelimit-reset': '1701358915', 'x-vercel-cache': 'MISS', 'x-vercel-id': 'fra1::sfo1::4fvdw-1701356472738-85f4a5457315', 'x-xss-protection': '1; mode=block', 'CF-Cache-Status': 'MISS', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ndJ7mkN9xUqT83hAB3gUQ9zgaDniO1WI6bY82qg4k6JhKUZMdgY%2BjV858tD78wUj8uCYHOiPgKiTCO67c6v%2FNWcO1dd2GySUQOEPyGPvfz5xi6ykde%2FKQ6KJsrBAotMRwUM%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '82e3f6e25d9e5c41-AMS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"name":"Buzz","tagline":"A Real Bitter Experience.","first_brewed":"09/2007","description":"A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.","image_url":"https://images.punkapi.com/v2/keg.png","abv":4.5,"ibu":60,"target_fg":1010,"target_og":1044,"ebc":20,"srm":10,"ph":4.4,"attenuation_level":75,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":64,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":3.3,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.2,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.4,"unit":"kilograms"}}],"hops":[{"name":"Fuggles","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"First Gold","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Fuggles","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"First Gold","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Cascade","amount":{"value":37.5,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Spicy chicken tikka masala","Grilled chicken quesadilla","Caramel toffee cake"],"brewers_tips":"The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":2,"name":"Trashy Blonde","tagline":"You Know You Shouldn't","first_brewed":"04/2008","description":"A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, substance, and a little bit of low self esteem for good measure; what would your mother say? The seductive lure of the sassy passion fruit hop proves too much to resist. All that is even before we get onto the fact that there are no additives, preservatives, pasteurization or strings attached. All wrapped up with the customary BrewDog bite and imaginative twist.","image_url":"https://images.punkapi.com/v2/2.png","abv":4.1,"ibu":41.5,"target_fg":1010,"target_og":1041.7,"ebc":15,"srm":15,"ph":4.4,"attenuation_level":76,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":69,"unit":"celsius"},"duration":null}],"fermentation":{"temp":{"value":18,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":3.25,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.2,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.4,"unit":"kilograms"}}],"hops":[{"name":"Amarillo","amount":{"value":13.8,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Simcoe","amount":{"value":13.8,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Amarillo","amount":{"value":26.3,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Motueka","amount":{"value":18.8,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Fresh crab with lemon","Garlic butter dipping sauce","Goats cheese salad","Creamy lemon bar doused in powdered sugar"],"brewers_tips":"Be careful not to collect too much wort from the mash. Once the sugars are all washed out there are some very unpleasant grainy tasting compounds that can be extracted into the wort.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":3,"name":"Berliner Weisse With Yuzu - B-Sides","tagline":"Japanese Citrus Berliner Weisse.","first_brewed":"11/2015","description":"Japanese citrus fruit intensifies the sour nature of this German classic.","image_url":"https://images.punkapi.com/v2/keg.png","abv":4.2,"ibu":8,"target_fg":1007,"target_og":1040,"ebc":8,"srm":4,"ph":3.2,"attenuation_level":83,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":60,"unit":"celsius"},"duration":10},{"temp":{"value":65,"unit":"celsius"},"duration":30},{"temp":{"value":72,"unit":"celsius"},"duration":10},{"temp":{"value":78,"unit":"celsius"},"duration":5}],"fermentation":{"temp":{"value":21,"unit":"celsius"}},"twist":"Soured naturally using the kettle souring technique, Yuzu fruit: 50g at middle, Yuzu juice: 200ml at FV"},"ingredients":{"malt":[{"name":"Propino Pale Malt","amount":{"value":1.63,"unit":"kilograms"}},{"name":"Wheat Malt","amount":{"value":1.63,"unit":"kilograms"}},{"name":"Propino Pale Malt for kettle souring","amount":{"value":0.03,"unit":"kilograms"}},{"name":"Acidulated Malt for kettle souring","amount":{"value":0.03,"unit":"kilograms"}}],"hops":[{"name":"Bramling Cross","amount":{"value":10,"unit":"grams"},"add":"middle","attribute":"bitter"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Smoked chicken wings","Miso ramen","Yuzu cheesecake"],"brewers_tips":"Clean everything twice. All you want is the clean sourness of lactobacillus.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":6,"name":"Electric India","tagline":"Vibrant Hoppy Saison.","first_brewed":"05/2013","description":"Re-brewed as a spring seasonal, this beer – which appeared originally as an Equity Punk shareholder creation – retains its trademark spicy, fruity edge. A perfect blend of Belgian Saison and US IPA, crushed peppercorns and heather honey are also added to produce a genuinely unique beer.","image_url":"https://images.punkapi.com/v2/6.png","abv":5.2,"ibu":38,"target_fg":1005,"target_og":1045,"ebc":15,"srm":7.5,"ph":4.4,"attenuation_level":88.9,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":22,"unit":"celsius"}},"twist":"Honey: 62.5g at End (WP), Coriander Seeds: 8.5g at 45mins"},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":3.63,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.13,"unit":"kilograms"}},{"name":"Wheat","amount":{"value":0.25,"unit":"kilograms"}}],"hops":[{"name":"Amarillo","amount":{"value":2.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Nelson Sauvin","amount":{"value":5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Amarillo","amount":{"value":5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Peppercorns","amount":{"value":2.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Nelson Sauvin","amount":{"value":20,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Amarillo","amount":{"value":12.5,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 3711 - French Saison™"},"food_pairing":["Mussels with a garlic and herb sauce","Crab melt sandwich","Shortbread cookies"],"brewers_tips":"Source some really good heather honey to get the right spicy esters in the beer.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":8,"name":"Fake Lager","tagline":"Bohemian Pilsner.","first_brewed":"03/2013","description":"Fake is the new black. Fake is where it is at. Fake Art, fake brands, fake breasts, and fake lager. We want to play our part in the ugly fallout from the Lager Dream. Say hello to Fake Lager – a zesty, floral 21st century faux masterpiece with added BrewDog bitterness.","image_url":"https://images.punkapi.com/v2/8.png","abv":4.7,"ibu":40,"target_fg":1010,"target_og":1046,"ebc":12,"srm":6,"ph":4.4,"attenuation_level":78,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":10,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":3.33,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.42,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.28,"unit":"kilograms"}},{"name":"Acidulated Malt","amount":{"value":0.07,"unit":"kilograms"}}],"hops":[{"name":"Magnum","amount":{"value":7.5,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Magnum","amount":{"value":5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":6.25,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Saaz","amount":{"value":6.25,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Hersbrucker","amount":{"value":18.75,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Saaz","amount":{"value":18.75,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 2007 - Pilsen Lager™"},"food_pairing":["Fried crab cakes with avocado salsa","Spicy shredded pork roll with hot dipping sauce","Key lime pie"],"brewers_tips":"Once the primary fermentation is complete get this beer as cold as you can and let it mature for as long as you've got.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":12,"name":"Arcade Nation","tagline":"Seasonal Black IPA.","first_brewed":"12/2015","description":"Running the knife-edge between an India Pale Ale and a Stout, this particular style is one we truly love. Black IPAs are a great showcase for the skill of our brew team, balancing so many complex and twisting flavours in the same moment. The citrus, mango and pine from the hops – three of our all-time favourites – play off against the roasty dryness from the malt bill at each and every turn.","image_url":"https://images.punkapi.com/v2/12.png","abv":5.3,"ibu":60,"target_fg":1012,"target_og":1052,"ebc":200,"srm":100,"ph":4.2,"attenuation_level":77,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":null}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Pale Ale","amount":{"value":3.13,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.25,"unit":"k... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20231130 17:01:12.277" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:11.627" endtime="20231130 17:01:12.277"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231130 17:01:12.288" level="INFO">@{data} = [ {'id': 1, 'name': 'Buzz', 'tagline': 'A Real Bitter Experience.', 'first_brewed': '09/2007', 'description': 'A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed...</msg>
+<status status="PASS" starttime="20231130 17:01:12.281" endtime="20231130 17:01:12.288"/>
+</kw>
+<for flavor="IN">
+<var>${beer}</var>
+<value>@{data}</value>
+<iter>
+<var name="${beer}">{'id': 1, 'name': 'Buzz', 'tagline': 'A Real Bitter Experience.', 'first_brewed': '09/2007', 'description': 'A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed o...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.306" level="INFO">Buzz</msg>
+<status status="PASS" starttime="20231130 17:01:12.305" endtime="20231130 17:01:12.306"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.306" endtime="20231130 17:01:12.306"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.305" endtime="20231130 17:01:12.306"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 2, 'name': 'Trashy Blonde', 'tagline': "You Know You Shouldn't", 'first_brewed': '04/2008', 'description': 'A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, subs...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.307" level="INFO">Trashy Blonde</msg>
+<status status="PASS" starttime="20231130 17:01:12.307" endtime="20231130 17:01:12.307"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.307" endtime="20231130 17:01:12.308"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.307" endtime="20231130 17:01:12.308"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 3, 'name': 'Berliner Weisse With Yuzu - B-Sides', 'tagline': 'Japanese Citrus Berliner Weisse.', 'first_brewed': '11/2015', 'description': 'Japanese citrus fruit intensifies the sour nature of ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.308" level="INFO">Berliner Weisse With Yuzu - B-Sides</msg>
+<status status="PASS" starttime="20231130 17:01:12.308" endtime="20231130 17:01:12.308"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.308" endtime="20231130 17:01:12.309"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.308" endtime="20231130 17:01:12.309"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 6, 'name': 'Electric India', 'tagline': 'Vibrant Hoppy Saison.', 'first_brewed': '05/2013', 'description': 'Re-brewed as a spring seasonal, this beer â\x80\x93 which appeared originally as an E...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.309" level="INFO">Electric India</msg>
+<status status="PASS" starttime="20231130 17:01:12.309" endtime="20231130 17:01:12.309"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.309" endtime="20231130 17:01:12.310"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.309" endtime="20231130 17:01:12.310"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 8, 'name': 'Fake Lager', 'tagline': 'Bohemian Pilsner.', 'first_brewed': '03/2013', 'description': 'Fake is the new black. Fake is where it is at. Fake Art, fake brands, fake breasts, and fake ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.311" level="INFO">Fake Lager</msg>
+<status status="PASS" starttime="20231130 17:01:12.310" endtime="20231130 17:01:12.311"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.311" endtime="20231130 17:01:12.311"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.310" endtime="20231130 17:01:12.311"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 12, 'name': 'Arcade Nation', 'tagline': 'Seasonal Black IPA.', 'first_brewed': '12/2015', 'description': 'Running the knife-edge between an India Pale Ale and a Stout, this particular style is ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.312" level="INFO">Arcade Nation</msg>
+<status status="PASS" starttime="20231130 17:01:12.312" endtime="20231130 17:01:12.312"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.312" endtime="20231130 17:01:12.313"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.312" endtime="20231130 17:01:12.313"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 13, 'name': 'Movember', 'tagline': 'Moustache-Worthy Beer.', 'first_brewed': '11/2009', 'description': 'A deliciously robust, black malted beer with a decadent dark, dry cocoa flavour that prov...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.313" level="INFO">Movember</msg>
+<status status="PASS" starttime="20231130 17:01:12.313" endtime="20231130 17:01:12.313"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.313" endtime="20231130 17:01:12.314"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.313" endtime="20231130 17:01:12.314"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 14, 'name': 'Alpha Dog', 'tagline': 'Existential Red Ale.', 'first_brewed': '02/2010', 'description': 'A fusion of caramel malt flavours and punchy New Zealand hops. A session beer you can get ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.315" level="INFO">Alpha Dog</msg>
+<status status="PASS" starttime="20231130 17:01:12.315" endtime="20231130 17:01:12.315"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.315" endtime="20231130 17:01:12.316"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.315" endtime="20231130 17:01:12.316"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 21, 'name': 'Vice Bier', 'tagline': 'Hoppy Wheat Bier.', 'first_brewed': '04/2013', 'description': 'Our take on the classic German Kristallweizen. A clear German wheat beer, layers of bubblegum...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.316" level="INFO">Vice Bier</msg>
+<status status="PASS" starttime="20231130 17:01:12.316" endtime="20231130 17:01:12.317"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.317" endtime="20231130 17:01:12.318"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.316" endtime="20231130 17:01:12.318"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 25, 'name': 'Bad Pixie', 'tagline': 'Spiced Wheat Beer.', 'first_brewed': '10/2008', 'description': '2008 Prototype beer, a 4.7% wheat ale with crushed juniper berries and citrus peel.', 'image...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.318" level="INFO">Bad Pixie</msg>
+<status status="PASS" starttime="20231130 17:01:12.318" endtime="20231130 17:01:12.319"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.319" endtime="20231130 17:01:12.320"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.318" endtime="20231130 17:01:12.320"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 26, 'name': 'Skull Candy', 'tagline': 'Pacific Hopped Amber Bitter.', 'first_brewed': '02/2010', 'description': 'The first beer that we brewed on our newly commissioned 5000 litre brewhouse in ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.321" level="INFO">Skull Candy</msg>
+<status status="PASS" starttime="20231130 17:01:12.320" endtime="20231130 17:01:12.321"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.321" endtime="20231130 17:01:12.322"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.320" endtime="20231130 17:01:12.322"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 31, 'name': 'Nanny State', 'tagline': 'Alcohol Free Hoppy Ale.', 'first_brewed': '08/2009', 'description': 'Brewing a full flavoured craft beer at 0.5% is no easy task. Packed with loads of Cen...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.322" level="INFO">Nanny State</msg>
+<status status="PASS" starttime="20231130 17:01:12.322" endtime="20231130 17:01:12.322"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.322" endtime="20231130 17:01:12.323"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.322" endtime="20231130 17:01:12.323"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 35, 'name': 'Berliner Weisse With Raspberries And Rhubarb - B-Sides', 'tagline': 'Fruity Berliner Weisse.', 'first_brewed': '11/2015', 'description': 'Tart, dry and acidic with a punch of summe...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.324" level="INFO">Berliner Weisse With Raspberries And Rhubarb - B-Sides</msg>
+<status status="PASS" starttime="20231130 17:01:12.324" endtime="20231130 17:01:12.324"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.324" endtime="20231130 17:01:12.325"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.323" endtime="20231130 17:01:12.325"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 43, 'name': 'American Wheat', 'tagline': 'Hoppy American Wheat.', 'first_brewed': '07/2014', 'description': 'A luscious blend of peach, blood orange and banana to make a suitably refreshing bev...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.325" level="INFO">American Wheat</msg>
+<status status="PASS" starttime="20231130 17:01:12.325" endtime="20231130 17:01:12.325"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.325" endtime="20231130 17:01:12.326"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.325" endtime="20231130 17:01:12.326"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 45, 'name': 'The Physics', 'tagline': 'Laid Back Amber Beer.', 'first_brewed': '04/2007', 'description': "A hoppy Amber Ale that won World's Best Amber Beer in the World Beer Awards 2007. Malt ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.326" level="INFO">The Physics</msg>
+<status status="PASS" starttime="20231130 17:01:12.326" endtime="20231130 17:01:12.327"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.327" endtime="20231130 17:01:12.327"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.326" endtime="20231130 17:01:12.327"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 53, 'name': 'Baby Dogma', 'tagline': 'Session Scotch Ale.', 'first_brewed': '09/2013', 'description': 'A baby Scotch ale with dry and toasty malt flavours and hints of smoke. Toffee, biscuit an...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.328" level="INFO">Baby Dogma</msg>
+<status status="PASS" starttime="20231130 17:01:12.327" endtime="20231130 17:01:12.328"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.328" endtime="20231130 17:01:12.328"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.327" endtime="20231130 17:01:12.328"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 61, 'name': 'Magic Stone Dog (w/Magic Rock &amp; Stone Brewing Co.)', 'tagline': 'Session Farmhouse IPA - Stone / Magic Rock Collab.', 'first_brewed': '06/2014', 'description': 'A session IPA brewe...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.328" level="INFO">Magic Stone Dog (w/Magic Rock &amp; Stone Brewing Co.)</msg>
+<status status="PASS" starttime="20231130 17:01:12.328" endtime="20231130 17:01:12.331"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.331" endtime="20231130 17:01:12.332"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.328" endtime="20231130 17:01:12.332"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 65, 'name': "Bracken's Porter", 'tagline': 'A Tribute To Our Favourite 4 Pawed Friend.', 'first_brewed': '03/2013', 'description': 'The beer was named Brackenâ\x80\x99s Porter as a tribute to o...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.332" level="INFO">Bracken's Porter</msg>
+<status status="PASS" starttime="20231130 17:01:12.332" endtime="20231130 17:01:12.332"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.332" endtime="20231130 17:01:12.340"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.332" endtime="20231130 17:01:12.340"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 67, 'name': 'Hunter Foundation Pale Ale', 'tagline': 'American Pale Ale.', 'first_brewed': '05/2012', 'description': "This straight-up US style pale ale uses some of our favourite hops against ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.341" level="INFO">Hunter Foundation Pale Ale</msg>
+<status status="PASS" starttime="20231130 17:01:12.341" endtime="20231130 17:01:12.341"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.341" endtime="20231130 17:01:12.350"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.340" endtime="20231130 17:01:12.350"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 68, 'name': 'Hype', 'tagline': 'New Zealand Pale Ale.', 'first_brewed': '08/2007', 'description': 'A perfect pale ale showcase for the tropical profile of New Zealand hops and the intense citru...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.351" level="INFO">Hype</msg>
+<status status="PASS" starttime="20231130 17:01:12.351" endtime="20231130 17:01:12.351"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.351" endtime="20231130 17:01:12.353"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.351" endtime="20231130 17:01:12.353"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 71, 'name': 'Pale - Russian Doll', 'tagline': 'Nesting Hop Bomb.', 'first_brewed': '08/2014', 'description': 'The levels of hops vary throughout the range. We love hops, so all four beers are b...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.354" level="INFO">Pale - Russian Doll</msg>
+<status status="PASS" starttime="20231130 17:01:12.353" endtime="20231130 17:01:12.354"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.354" endtime="20231130 17:01:12.354"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.353" endtime="20231130 17:01:12.354"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 74, 'name': 'Eurotrash', 'tagline': 'Belgian Blonde.', 'first_brewed': '10/2009', 'description': 'Trashy Blonde with a Belgian Twist. Clove oil, red apples and a drier mouthfeel set this beer a...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.355" level="INFO">Eurotrash</msg>
+<status status="PASS" starttime="20231130 17:01:12.354" endtime="20231130 17:01:12.355"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.355" endtime="20231130 17:01:12.355"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.354" endtime="20231130 17:01:12.355"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 77, 'name': 'Hobo Pop', 'tagline': '2013 Prototype Rye Pale Ale.', 'first_brewed': '11/2013', 'description': 'Brewed with mountains of Wheat, Rye, Cara and Crystal malts, fermented with an Amer...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.356" level="INFO">Hobo Pop</msg>
+<status status="PASS" starttime="20231130 17:01:12.355" endtime="20231130 17:01:12.356"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.356" endtime="20231130 17:01:12.356"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.355" endtime="20231130 17:01:12.356"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 81, 'name': 'India Session Lager - Prototype Challenge', 'tagline': 'Refreshing Hop Fix.', 'first_brewed': '11/2015', 'description': 'BrewDogâ\x80\x99s level of dry-hop to a beer formed with a ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.356" level="INFO">India Session Lager - Prototype Challenge</msg>
+<status status="PASS" starttime="20231130 17:01:12.356" endtime="20231130 17:01:12.356"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.356" endtime="20231130 17:01:12.357"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.356" endtime="20231130 17:01:12.357"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 84, 'name': 'Baby Saison - B-Sides', 'tagline': 'Trial Baby Saison.', 'first_brewed': '08/2015', 'description': 'A hark back to the origins of Saison; slight spice and earthy notes with highlig...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:12.357" level="INFO">Baby Saison - B-Sides</msg>
+<status status="PASS" starttime="20231130 17:01:12.357" endtime="20231130 17:01:12.357"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:12.357" endtime="20231130 17:01:12.358"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:12.357" endtime="20231130 17:01:12.358"/>
+</iter>
+<status status="PASS" starttime="20231130 17:01:12.305" endtime="20231130 17:01:12.358"/>
+</for>
+<tag>ABVFinland</tag>
+<status status="PASS" starttime="20231130 17:01:11.626" endtime="20231130 17:01:12.360"/>
+</test>
+<test id="s1-t6" name="Get All Beers Brewed Before 2011 With Alcohol Content More Than 8" line="43">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${api_url}/beers</arg>
+<arg>params=brewed_before=01-2011&amp;abv_lt=8</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231130 17:01:13.752" level="INFO">GET Request : url=https://api.punkapi.com/v2/beers?brewed_before=01-2011&amp;abv_lt=8 
+ path_url=/v2/beers?brewed_before=01-2011&amp;abv_lt=8 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231130 17:01:13.753" level="INFO">GET Response : url=https://api.punkapi.com/v2/beers?brewed_before=01-2011&amp;abv_lt=8 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 30 Nov 2023 15:01:14 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept', 'Cache-Control': 'public, max-age=14400, must-revalidate', 'Content-Encoding': 'gzip', 'etag': 'W/"c236-Y/r0X/aCC2zEDrKpmPDHZmc89ys"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '3600', 'x-ratelimit-remaining': '3293', 'x-ratelimit-reset': '1701358915', 'x-vercel-cache': 'MISS', 'x-vercel-id': 'fra1::sfo1::sxqvt-1701356473450-f40e2953f50c', 'x-xss-protection': '1; mode=block', 'CF-Cache-Status': 'MISS', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ngVkOwYP3RCEAiZsyTme9BDWZFwRlAv8yGIcYVxCZBIdVEPd%2BhTkmRprZA1PWBKlsDgLr5s8mwYBtvov3Hkj%2BOBLRw7NEXMqlFZP8Aw4J5dsDBQ5UzGOXdy9VBWq80zJKjQ%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '82e3f6e6ddc866d5-AMS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":1,"name":"Buzz","tagline":"A Real Bitter Experience.","first_brewed":"09/2007","description":"A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.","image_url":"https://images.punkapi.com/v2/keg.png","abv":4.5,"ibu":60,"target_fg":1010,"target_og":1044,"ebc":20,"srm":10,"ph":4.4,"attenuation_level":75,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":64,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":3.3,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.2,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.4,"unit":"kilograms"}}],"hops":[{"name":"Fuggles","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"First Gold","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Fuggles","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"First Gold","amount":{"value":37.5,"unit":"grams"},"add":"middle","attribute":"flavour"},{"name":"Cascade","amount":{"value":37.5,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Spicy chicken tikka masala","Grilled chicken quesadilla","Caramel toffee cake"],"brewers_tips":"The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":2,"name":"Trashy Blonde","tagline":"You Know You Shouldn't","first_brewed":"04/2008","description":"A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, substance, and a little bit of low self esteem for good measure; what would your mother say? The seductive lure of the sassy passion fruit hop proves too much to resist. All that is even before we get onto the fact that there are no additives, preservatives, pasteurization or strings attached. All wrapped up with the customary BrewDog bite and imaginative twist.","image_url":"https://images.punkapi.com/v2/2.png","abv":4.1,"ibu":41.5,"target_fg":1010,"target_og":1041.7,"ebc":15,"srm":15,"ph":4.4,"attenuation_level":76,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":69,"unit":"celsius"},"duration":null}],"fermentation":{"temp":{"value":18,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":3.25,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.2,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.4,"unit":"kilograms"}}],"hops":[{"name":"Amarillo","amount":{"value":13.8,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Simcoe","amount":{"value":13.8,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Amarillo","amount":{"value":26.3,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Motueka","amount":{"value":18.8,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Fresh crab with lemon","Garlic butter dipping sauce","Goats cheese salad","Creamy lemon bar doused in powdered sugar"],"brewers_tips":"Be careful not to collect too much wort from the mash. Once the sugars are all washed out there are some very unpleasant grainy tasting compounds that can be extracted into the wort.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":13,"name":"Movember","tagline":"Moustache-Worthy Beer.","first_brewed":"11/2009","description":"A deliciously robust, black malted beer with a decadent dark, dry cocoa flavour that provides an enticing backdrop to the Cascade hops.","image_url":"https://images.punkapi.com/v2/13.png","abv":4.5,"ibu":50,"target_fg":1012,"target_og":1047,"ebc":140,"srm":70,"ph":5.2,"attenuation_level":74.5,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":68,"unit":"celsius"},"duration":50}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":3.44,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.63,"unit":"kilograms"}},{"name":"Crystal 150","amount":{"value":0.31,"unit":"kilograms"}},{"name":"Carafa Special Malt Type 1","amount":{"value":0.31,"unit":"kilograms"}},{"name":"Carafa Special Malt Type 3","amount":{"value":0.31,"unit":"kilograms"}}],"hops":[{"name":"Cascade","amount":{"value":43.8,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Cascade","amount":{"value":81.3,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Cascade","amount":{"value":250,"unit":"grams"},"add":"dry hop","attribute":"aroma"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Vegetable egg scramble","Margherita pizza","Fresh berry crisp tart"],"brewers_tips":"If you can’t find really fresh cascade, substitute it for Amarillo or Ahtanum.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":14,"name":"Alpha Dog","tagline":"Existential Red Ale.","first_brewed":"02/2010","description":"A fusion of caramel malt flavours and punchy New Zealand hops. A session beer you can get your teeth into.","image_url":"https://images.punkapi.com/v2/14.png","abv":4.5,"ibu":42,"target_fg":1025,"target_og":1046,"ebc":62,"srm":31,"ph":4.4,"attenuation_level":72.8,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":25}],"fermentation":{"temp":{"value":22,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Maris Otter Extra Pale","amount":{"value":2.5,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":1.25,"unit":"kilograms"}},{"name":"Munich","amount":{"value":0.61,"unit":"kilograms"}},{"name":"Crystal 150","amount":{"value":0.28,"unit":"kilograms"}},{"name":"Dark Crystal 350-400","amount":{"value":0.2,"unit":"kilograms"}}],"hops":[{"name":"Nelson Sauvin","amount":{"value":15,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Amarillo","amount":{"value":10,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Nelson Sauvin","amount":{"value":30,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Pastrami","Swiss and horseradish sandwich","Sharp cheddar cheese and onion/ raisin chutney","Peanut brittle"],"brewers_tips":"Crush the malt as close to brewing time as possible. The fresher the malt, the more intense caramel flavours will be released in the wort.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":25,"name":"Bad Pixie","tagline":"Spiced Wheat Beer.","first_brewed":"10/2008","description":"2008 Prototype beer, a 4.7% wheat ale with crushed juniper berries and citrus peel.","image_url":"https://images.punkapi.com/v2/25.png","abv":4.7,"ibu":45,"target_fg":1010,"target_og":1047,"ebc":8,"srm":4,"ph":4.4,"attenuation_level":79,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":67,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":"Crushed juniper berries: 12.5g, Lemon peel: 18.8g"},"ingredients":{"malt":[{"name":"Wheat","amount":{"value":2.5,"unit":"kilograms"}},{"name":"Extra Pale","amount":{"value":2.06,"unit":"kilograms"}}],"hops":[{"name":"First Gold","amount":{"value":18.75,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"First Gold","amount":{"value":25,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Sorachi Ace","amount":{"value":16.25,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Poached sole fillet with capers","Summer fruit salad","Banana split"],"brewers_tips":"Make sure you have plenty of room in the fermenter. Beers containing wheat can often foam aggressively during fermentation.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":26,"name":"Skull Candy","tagline":"Pacific Hopped Amber Bitter.","first_brewed":"02/2010","description":"The first beer that we brewed on our newly commissioned 5000 litre brewhouse in Fraserburgh 2009. A beer with the malt and body of an English bitter, but the heart and soul of vibrant citrus US hops.","image_url":"https://images.punkapi.com/v2/keg.png","abv":3.5,"ibu":33,"target_fg":1012,"target_og":1038,"ebc":50,"srm":25,"ph":4.4,"attenuation_level":68.4,"volume":{"value":20,"unit":"litres"},"boil_volume":{"value":25,"unit":"litres"},"method":{"mash_temp":[{"temp":{"value":65,"unit":"celsius"},"duration":75}],"fermentation":{"temp":{"value":19,"unit":"celsius"}},"twist":null},"ingredients":{"malt":[{"name":"Extra Pale","amount":{"value":2.81,"unit":"kilograms"}},{"name":"Caramalt","amount":{"value":0.63,"unit":"kilograms"}},{"name":"Crystal 120","amount":{"value":0.31,"unit":"kilograms"}}],"hops":[{"name":"Cascade","amount":{"value":25,"unit":"grams"},"add":"start","attribute":"bitter"},{"name":"Cascade","amount":{"value":18.8,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Centennial","amount":{"value":18.8,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Amarillo","amount":{"value":25,"unit":"grams"},"add":"end","attribute":"flavour"},{"name":"Simcoe","amount":{"value":31.3,"unit":"grams"},"add":"end","attribute":"flavour"}],"yeast":"Wyeast 1056 - American Ale™"},"food_pairing":["Haggis bon bons","Rosemary and lemon roast chicken","Oatmeal and cranberry cookies"],"brewers_tips":"Make sure your hops are well broken up and mixed in when added to the kettle for aroma additions. The wort is not boiling so is not agitating the hops to allow mixing. If the hops aren't steeped properly in the wort you won't get the maximum flavour impact.","contributed_by":"Sam Mason &lt;samjbmason&gt;"},{"id":31,"name":"Nanny S... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20231130 17:01:13.753" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231130 17:01:12.363" endtime="20231130 17:01:13.753"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231130 17:01:13.762" level="INFO">@{data} = [ {'id': 1, 'name': 'Buzz', 'tagline': 'A Real Bitter Experience.', 'first_brewed': '09/2007', 'description': 'A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed...</msg>
+<status status="PASS" starttime="20231130 17:01:13.755" endtime="20231130 17:01:13.762"/>
+</kw>
+<for flavor="IN">
+<var>${beer}</var>
+<value>@{data}</value>
+<iter>
+<var name="${beer}">{'id': 1, 'name': 'Buzz', 'tagline': 'A Real Bitter Experience.', 'first_brewed': '09/2007', 'description': 'A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed o...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.764" level="INFO">Buzz</msg>
+<status status="PASS" starttime="20231130 17:01:13.763" endtime="20231130 17:01:13.764"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.764" endtime="20231130 17:01:13.764"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.763" endtime="20231130 17:01:13.764"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 2, 'name': 'Trashy Blonde', 'tagline': "You Know You Shouldn't", 'first_brewed': '04/2008', 'description': 'A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, subs...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.764" level="INFO">Trashy Blonde</msg>
+<status status="PASS" starttime="20231130 17:01:13.764" endtime="20231130 17:01:13.764"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.764" endtime="20231130 17:01:13.765"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.764" endtime="20231130 17:01:13.765"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 13, 'name': 'Movember', 'tagline': 'Moustache-Worthy Beer.', 'first_brewed': '11/2009', 'description': 'A deliciously robust, black malted beer with a decadent dark, dry cocoa flavour that prov...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.765" level="INFO">Movember</msg>
+<status status="PASS" starttime="20231130 17:01:13.765" endtime="20231130 17:01:13.765"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.765" endtime="20231130 17:01:13.766"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.765" endtime="20231130 17:01:13.766"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 14, 'name': 'Alpha Dog', 'tagline': 'Existential Red Ale.', 'first_brewed': '02/2010', 'description': 'A fusion of caramel malt flavours and punchy New Zealand hops. A session beer you can get ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.767" level="INFO">Alpha Dog</msg>
+<status status="PASS" starttime="20231130 17:01:13.766" endtime="20231130 17:01:13.767"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.767" endtime="20231130 17:01:13.768"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.766" endtime="20231130 17:01:13.768"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 25, 'name': 'Bad Pixie', 'tagline': 'Spiced Wheat Beer.', 'first_brewed': '10/2008', 'description': '2008 Prototype beer, a 4.7% wheat ale with crushed juniper berries and citrus peel.', 'image...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.768" level="INFO">Bad Pixie</msg>
+<status status="PASS" starttime="20231130 17:01:13.768" endtime="20231130 17:01:13.768"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.768" endtime="20231130 17:01:13.769"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.768" endtime="20231130 17:01:13.769"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 26, 'name': 'Skull Candy', 'tagline': 'Pacific Hopped Amber Bitter.', 'first_brewed': '02/2010', 'description': 'The first beer that we brewed on our newly commissioned 5000 litre brewhouse in ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.770" level="INFO">Skull Candy</msg>
+<status status="PASS" starttime="20231130 17:01:13.769" endtime="20231130 17:01:13.770"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.770" endtime="20231130 17:01:13.771"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.769" endtime="20231130 17:01:13.771"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 31, 'name': 'Nanny State', 'tagline': 'Alcohol Free Hoppy Ale.', 'first_brewed': '08/2009', 'description': 'Brewing a full flavoured craft beer at 0.5% is no easy task. Packed with loads of Cen...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.771" level="INFO">Nanny State</msg>
+<status status="PASS" starttime="20231130 17:01:13.771" endtime="20231130 17:01:13.771"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.771" endtime="20231130 17:01:13.772"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.771" endtime="20231130 17:01:13.772"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 45, 'name': 'The Physics', 'tagline': 'Laid Back Amber Beer.', 'first_brewed': '04/2007', 'description': "A hoppy Amber Ale that won World's Best Amber Beer in the World Beer Awards 2007. Malt ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.772" level="INFO">The Physics</msg>
+<status status="PASS" starttime="20231130 17:01:13.772" endtime="20231130 17:01:13.772"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.772" endtime="20231130 17:01:13.773"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.772" endtime="20231130 17:01:13.773"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 51, 'name': 'TM10', 'tagline': 'Liquid Art.', 'first_brewed': '04/2010', 'description': 'Brewed for the Tate Modernâ\x80\x99s 10th Anniversary. A saison style beer brewed with ginger and orange...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.773" level="INFO">TM10</msg>
+<status status="PASS" starttime="20231130 17:01:13.773" endtime="20231130 17:01:13.773"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.773" endtime="20231130 17:01:13.774"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.773" endtime="20231130 17:01:13.774"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 68, 'name': 'Hype', 'tagline': 'New Zealand Pale Ale.', 'first_brewed': '08/2007', 'description': 'A perfect pale ale showcase for the tropical profile of New Zealand hops and the intense citru...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.775" level="INFO">Hype</msg>
+<status status="PASS" starttime="20231130 17:01:13.775" endtime="20231130 17:01:13.775"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.775" endtime="20231130 17:01:13.776"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.775" endtime="20231130 17:01:13.776"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 74, 'name': 'Eurotrash', 'tagline': 'Belgian Blonde.', 'first_brewed': '10/2009', 'description': 'Trashy Blonde with a Belgian Twist. Clove oil, red apples and a drier mouthfeel set this beer a...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.776" level="INFO">Eurotrash</msg>
+<status status="PASS" starttime="20231130 17:01:13.776" endtime="20231130 17:01:13.776"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.776" endtime="20231130 17:01:13.777"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.776" endtime="20231130 17:01:13.777"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 85, 'name': 'Santa Paws', 'tagline': 'Christmas Scoth Ale.', 'first_brewed': '10/2010', 'description': 'A 4.5% decadent scotch ale brewed with Scottish heather honey. A robust malty beer packed...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.777" level="INFO">Santa Paws</msg>
+<status status="PASS" starttime="20231130 17:01:13.777" endtime="20231130 17:01:13.777"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.777" endtime="20231130 17:01:13.777"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.777" endtime="20231130 17:01:13.777"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 86, 'name': 'Original Dogma (NeÌ\x81e Speedball)', 'tagline': 'Strong Ale With Honey And Spices.', 'first_brewed': '07/2008', 'description': 'A strong ale, brewed with guarana, Californian popp...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.779" level="INFO">Original Dogma (NeÌe Speedball)</msg>
+<status status="PASS" starttime="20231130 17:01:13.779" endtime="20231130 17:01:13.779"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.779" endtime="20231130 17:01:13.787"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.777" endtime="20231130 17:01:13.787"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 95, 'name': 'Peroxide Punk', 'tagline': 'Zesty Pale Ale.', 'first_brewed': '04/2007', 'description': 'A trashy blonde concession for those who felt that our original 6% Punk IPA recipe was too ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.787" level="INFO">Peroxide Punk</msg>
+<status status="PASS" starttime="20231130 17:01:13.787" endtime="20231130 17:01:13.787"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.788" endtime="20231130 17:01:13.788"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.787" endtime="20231130 17:01:13.788"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 106, 'name': 'Punk IPA 2010 - Current', 'tagline': 'Post Modern Classic. Spiky. Tropical. Hoppy.', 'first_brewed': '10/2010', 'description': 'Punk IPA. Amplified. In 2010 we finally got our paw...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.789" level="INFO">Punk IPA 2010 - Current</msg>
+<status status="PASS" starttime="20231130 17:01:13.789" endtime="20231130 17:01:13.789"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.789" endtime="20231130 17:01:13.789"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.789" endtime="20231130 17:01:13.789"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 117, 'name': 'Hop Rocker', 'tagline': 'Hoppy Aggressive Lager', 'first_brewed': '04/2007', 'description': 'The first of our foray into lager beer, Hop Rocker is a high impact, hoppy behemoth ma...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.790" level="INFO">Hop Rocker</msg>
+<status status="PASS" starttime="20231130 17:01:13.790" endtime="20231130 17:01:13.790"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.790" endtime="20231130 17:01:13.791"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.790" endtime="20231130 17:01:13.791"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 119, 'name': 'Zeitgeist', 'tagline': 'Organic Black Lager.', 'first_brewed': '12/2008', 'description': 'Zeitgeist is an idiosyncratic alternative black lager. Its inspiration is found more than...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.791" level="INFO">Zeitgeist</msg>
+<status status="PASS" starttime="20231130 17:01:13.791" endtime="20231130 17:01:13.791"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.792" endtime="20231130 17:01:13.792"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.791" endtime="20231130 17:01:13.792"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 121, 'name': 'Punk Monk', 'tagline': 'Who Ordered The Belgian Yeast?', 'first_brewed': '07/2009', 'description': 'Old world meets new in this trans-atlantic mash up of brewing ingredients. Belg...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.792" level="INFO">Punk Monk</msg>
+<status status="PASS" starttime="20231130 17:01:13.792" endtime="20231130 17:01:13.792"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.792" endtime="20231130 17:01:13.794"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.792" endtime="20231130 17:01:13.794"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 124, 'name': 'Chaos Theory', 'tagline': 'Predictably Random IPA.', 'first_brewed': '10/2008', 'description': 'Chaos Theory is the most under- rated achievement of 20th Century science. This bee...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.794" level="INFO">Chaos Theory</msg>
+<status status="PASS" starttime="20231130 17:01:13.794" endtime="20231130 17:01:13.794"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.794" endtime="20231130 17:01:13.794"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.794" endtime="20231130 17:01:13.794"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 132, 'name': '5am Saint', 'tagline': 'Bittersweet Chaos. Malty. Fruity. Bite.', 'first_brewed': '06/2009', 'description': 'Out of order and stability comes the rush of the pack. Berry and caram...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.794" level="INFO">5am Saint</msg>
+<status status="PASS" starttime="20231130 17:01:13.794" endtime="20231130 17:01:13.794"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.794" endtime="20231130 17:01:13.797"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.794" endtime="20231130 17:01:13.797"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 157, 'name': 'Edge', 'tagline': 'Dark Full-Bodied Cask Ale', 'first_brewed': '12/2007', 'description': "Low ABV, high flavour, this beer was brewed to show that a beer can have all the flavour ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.797" level="INFO">Edge</msg>
+<status status="PASS" starttime="20231130 17:01:13.797" endtime="20231130 17:01:13.797"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.797" endtime="20231130 17:01:13.798"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.797" endtime="20231130 17:01:13.798"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 162, 'name': '77 Lager', 'tagline': 'Artisan Rebel Pilsner.', 'first_brewed': '12/2008', 'description': 'Think of everything you know about lagers. Then forget it all instantly. 77 will redefin...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.799" level="INFO">77 Lager</msg>
+<status status="PASS" starttime="20231130 17:01:13.798" endtime="20231130 17:01:13.799"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.799" endtime="20231130 17:01:13.800"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.798" endtime="20231130 17:01:13.800"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 179, 'name': 'How To Disappear Completely', 'tagline': 'Fake Fix Double IPA.', 'first_brewed': '04/2009', 'description': 'Jam-packed with two of our favourite hops - Columbus and Centennial, it...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.800" level="INFO">How To Disappear Completely</msg>
+<status status="PASS" starttime="20231130 17:01:13.800" endtime="20231130 17:01:13.800"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.800" endtime="20231130 17:01:13.800"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.800" endtime="20231130 17:01:13.800"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 192, 'name': 'Punk IPA 2007 - 2010', 'tagline': 'Post Modern Classic. Spiky. Tropical. Hoppy.', 'first_brewed': '04/2007', 'description': "Our flagship beer that kick started the craft beer rev...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.800" level="INFO">Punk IPA 2007 - 2010</msg>
+<status status="PASS" starttime="20231130 17:01:13.800" endtime="20231130 17:01:13.800"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.800" endtime="20231130 17:01:13.801"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.800" endtime="20231130 17:01:13.801"/>
+</iter>
+<iter>
+<var name="${beer}">{'id': 194, 'name': 'Hardkogt IPA', 'tagline': 'A Special Double IPA For Our Danish Friends.', 'first_brewed': '06/2010', 'description': 'Brewed for the beer maniacs in Denmark, this Double IPA quiver...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231130 17:01:13.801" level="INFO">Hardkogt IPA</msg>
+<status status="PASS" starttime="20231130 17:01:13.801" endtime="20231130 17:01:13.801"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${beer}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231130 17:01:13.801" endtime="20231130 17:01:13.802"/>
+</kw>
+<status status="PASS" starttime="20231130 17:01:13.801" endtime="20231130 17:01:13.802"/>
+</iter>
+<status status="PASS" starttime="20231130 17:01:13.763" endtime="20231130 17:01:13.802"/>
+</for>
+<tag>Before2011over8ABV</tag>
+<status status="PASS" starttime="20231130 17:01:12.362" endtime="20231130 17:01:13.804"/>
+</test>
+<status status="PASS" starttime="20231130 17:01:09.391" endtime="20231130 17:01:13.817"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">ABVFinland</stat>
+<stat pass="1" fail="0" skip="0">Before2011over8ABV</stat>
+<stat pass="1" fail="0" skip="0">hersbrucker</stat>
+<stat pass="1" fail="0" skip="0">rabiator</stat>
+<stat pass="1" fail="0" skip="0">random</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="01 Punk-Api">01 Punk-Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
