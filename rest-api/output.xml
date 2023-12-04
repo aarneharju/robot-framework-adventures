@@ -1,102 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231204 12:19:27.453" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231204 15:11:02.623" rpa="false" schemaversion="4">
 <suite id="s1" name="02 Cat-Api" source="C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\rest-api\02_cat-api.robot">
-<test id="s1-t1" name="Get Siberian breed website" line="23">
+<test id="s1-t1" name="Post An Image To Favourites List" line="37">
 <kw name="Create New Session">
 <kw name="Set Log Level" library="BuiltIn">
 <var>${old_log_level}</var>
 <arg>NONE</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<status status="PASS" starttime="20231204 12:19:27.700" endtime="20231204 12:19:27.700"/>
+<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>x-api-key=${api_key}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" starttime="20231204 12:19:27.700" endtime="20231204 12:19:27.701"/>
+<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>catapiSession</arg>
 <arg>${api_url}</arg>
 <arg>headers=${headers}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" starttime="20231204 12:19:27.701" endtime="20231204 12:19:27.701"/>
+<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
 </kw>
 <kw name="Set Log Level" library="BuiltIn">
 <arg>${old_log_level}</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<msg timestamp="20231204 12:19:27.701" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231204 12:19:27.701" endtime="20231204 12:19:27.701"/>
+<msg timestamp="20231204 15:11:02.824" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
 </kw>
-<status status="PASS" starttime="20231204 12:19:27.699" endtime="20231204 12:19:27.702"/>
+<status status="PASS" starttime="20231204 15:11:02.823" endtime="20231204 15:11:02.824"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{favourite_to_add}</var>
+<arg>image_id=g5</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231204 15:11:02.826" level="INFO">&amp;{favourite_to_add} = { image_id=g5 }</msg>
+<status status="PASS" starttime="20231204 15:11:02.826" endtime="20231204 15:11:02.826"/>
 </kw>
 <kw name="Set Log Level" library="BuiltIn">
 <var>${old_log_level}</var>
 <arg>NONE</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<status status="PASS" starttime="20231204 12:19:27.703" endtime="20231204 12:19:27.703"/>
+<status status="PASS" starttime="20231204 15:11:02.826" endtime="20231204 15:11:02.826"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
+<kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>catapiSession</arg>
-<arg>${api_url}/breeds/search</arg>
-<arg>params=q=Siberian</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" starttime="20231204 12:19:27.703" endtime="20231204 12:19:28.334"/>
+<arg>${api_url}/favourites</arg>
+<arg>json=${favourite_to_add}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" starttime="20231204 15:11:02.826" endtime="20231204 15:11:03.535"/>
 </kw>
 <kw name="Set Log Level" library="BuiltIn">
 <arg>${old_log_level}</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<msg timestamp="20231204 12:19:28.335" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231204 12:19:28.335" endtime="20231204 12:19:28.336"/>
+<msg timestamp="20231204 15:11:03.537" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231204 15:11:03.537" endtime="20231204 15:11:03.537"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>@{data}</var>
 <arg>json.loads('''${response.content}''')</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231204 12:19:28.339" level="INFO">@{data} = [ {'weight': {'imperial': '8 - 16', 'metric': '4 - 7'}, 'id': 'sibe', 'name': 'Siberian', 'cfa_url': 'http://cfa.org/Breeds/BreedsSthruT/Siberian.aspx', 'vetstreet_url': 'http://www.vetstreet.com/cats...</msg>
-<status status="PASS" starttime="20231204 12:19:28.337" endtime="20231204 12:19:28.339"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${cfa_url}</var>
-<arg>${data}[0][cfa_url]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231204 12:19:28.340" level="INFO">${cfa_url} = http://cfa.org/Breeds/BreedsSthruT/Siberian.aspx</msg>
-<status status="PASS" starttime="20231204 12:19:28.339" endtime="20231204 12:19:28.340"/>
+<msg timestamp="20231204 15:11:03.540" level="INFO">@{data} = [ message | id ]</msg>
+<status status="PASS" starttime="20231204 15:11:03.538" endtime="20231204 15:11:03.540"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${data}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231204 12:19:28.340" endtime="20231204 12:19:28.341"/>
+<status status="PASS" starttime="20231204 15:11:03.541" endtime="20231204 15:11:03.541"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${favourite_id_from_response}</var>
+<arg>${data}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231204 15:11:03.542" level="INFO">${favourite_id_from_response} = id</msg>
+<status status="PASS" starttime="20231204 15:11:03.542" endtime="20231204 15:11:03.542"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<var>${old_log_level}</var>
+<arg>NONE</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<status status="PASS" starttime="20231204 15:11:03.543" endtime="20231204 15:11:03.544"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>catapiSession</arg>
+<arg>${api_url}/images/search</arg>
+<arg>params=${favourite_id_from_response}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" starttime="20231204 15:11:03.545" endtime="20231204 15:11:03.915"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>${old_log_level}</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20231204 15:11:03.916" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231204 15:11:03.916" endtime="20231204 15:11:03.918"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231204 15:11:03.920" level="INFO">@{data} = [ {'breeds': [], 'id': 'eii', 'url': 'https://cdn2.thecatapi.com/images/eii.jpg', 'width': 640, 'height': 480} ]</msg>
+<status status="PASS" starttime="20231204 15:11:03.919" endtime="20231204 15:11:03.920"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${cat_url}</var>
+<arg>${data}[0][url]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231204 15:11:03.922" level="INFO">${cat_url} = https://cdn2.thecatapi.com/images/eii.jpg</msg>
+<status status="PASS" starttime="20231204 15:11:03.921" endtime="20231204 15:11:03.922"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${cfa_url}</arg>
+<arg>${cat_url}</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231204 12:19:28.343" level="INFO">Opening browser 'Chrome' to base url 'http://cfa.org/Breeds/BreedsSthruT/Siberian.aspx'.</msg>
-<status status="PASS" starttime="20231204 12:19:28.342" endtime="20231204 12:19:36.793"/>
+<msg timestamp="20231204 15:11:03.923" level="INFO">Opening browser 'Chrome' to base url 'https://cdn2.thecatapi.com/images/eii.jpg'.</msg>
+<status status="PASS" starttime="20231204 15:11:03.923" endtime="20231204 15:11:09.135"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20231204 12:19:36.924" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20231204 12:19:36.794" endtime="20231204 12:19:36.925"/>
+<msg timestamp="20231204 15:11:09.340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231204 15:11:09.136" endtime="20231204 15:11:09.340"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231204 12:19:36.926" endtime="20231204 12:19:39.280"/>
-</kw>
-<tag>breed</tag>
-<status status="PASS" starttime="20231204 12:19:27.699" endtime="20231204 12:19:39.280"/>
+<tag>favourite</tag>
+<status status="PASS" starttime="20231204 15:11:02.823" endtime="20231204 15:11:09.341"/>
 </test>
-<status status="PASS" starttime="20231204 12:19:27.454" endtime="20231204 12:19:39.282"/>
+<status status="PASS" starttime="20231204 15:11:02.624" endtime="20231204 15:11:09.343"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">breed</stat>
+<stat pass="1" fail="0" skip="0">favourite</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="02 Cat-Api">02 Cat-Api</stat>
