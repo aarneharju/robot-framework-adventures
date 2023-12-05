@@ -53,6 +53,31 @@ Post An Image To Favourites List
     Open Browser  ${cat_url}  Chrome
     Capture Page Screenshot
     
+Delete An Image From Favourites List
+    [Tags]    delete favourite
+    Create New Session
+    ${old_log_level}=    Set Log Level    NONE
+    # Get favourites list
+    ${response}    GET On Session    catapiSession    ${api_url}/favourites
+    Set Log Level    ${old_log_level}
+    @{data}=  Evaluate  json.loads('''${response.content}''')  json
+    # Get the latest favourite
+    ${latest_favourite_before_deleting}=    Set Variable    ${data}[-1][id]
+    Log To Console    ${latest_favourite_before_deleting}
+    # Delete the latest favourite
+    ${old_log_level}=    Set Log Level    NONE
+    ${response}    DELETE On Session    catapiSession    ${api_url}/favourites/${latest_favourite_before_deleting}
+    Log To Console    ${response}
+    # Get the favourites list again
+    ${response}    GET On Session    catapiSession    ${api_url}/favourites
+    Set Log Level    ${old_log_level}
+    @{data}=  Evaluate  json.loads('''${response.content}''')  json
+    # Get the latest favourite again
+    ${latest_favourite_after_deleting}=    Set Variable    ${data}[-1][id]
+    Log To Console    ${latest_favourite_after_deleting}
+    # Confirm that the favourite was deleted
+    Should Not Be Equal As Strings    ${latest_favourite_after_deleting}    ${latest_favourite_before_deleting}
+
 
 *** Keywords ***
 Create New Session

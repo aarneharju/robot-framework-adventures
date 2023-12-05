@@ -1,140 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231204 15:11:02.623" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231205 11:23:16.013" rpa="false" schemaversion="4">
 <suite id="s1" name="02 Cat-Api" source="C:\Users\aharju\Documents\RobotFramework\robot-framework-adventures\rest-api\02_cat-api.robot">
-<test id="s1-t1" name="Post An Image To Favourites List" line="37">
+<test id="s1-t1" name="Delete An Image From Favourites List" line="56">
 <kw name="Create New Session">
 <kw name="Set Log Level" library="BuiltIn">
 <var>${old_log_level}</var>
 <arg>NONE</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
+<status status="PASS" starttime="20231205 11:23:16.203" endtime="20231205 11:23:16.203"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>x-api-key=${api_key}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
+<status status="PASS" starttime="20231205 11:23:16.203" endtime="20231205 11:23:16.203"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>catapiSession</arg>
 <arg>${api_url}</arg>
 <arg>headers=${headers}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
+<status status="PASS" starttime="20231205 11:23:16.203" endtime="20231205 11:23:16.203"/>
 </kw>
 <kw name="Set Log Level" library="BuiltIn">
 <arg>${old_log_level}</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<msg timestamp="20231204 15:11:02.824" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231204 15:11:02.824" endtime="20231204 15:11:02.824"/>
+<msg timestamp="20231205 11:23:16.203" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231205 11:23:16.203" endtime="20231205 11:23:16.203"/>
 </kw>
-<status status="PASS" starttime="20231204 15:11:02.823" endtime="20231204 15:11:02.824"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{favourite_to_add}</var>
-<arg>image_id=g5</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231204 15:11:02.826" level="INFO">&amp;{favourite_to_add} = { image_id=g5 }</msg>
-<status status="PASS" starttime="20231204 15:11:02.826" endtime="20231204 15:11:02.826"/>
+<status status="PASS" starttime="20231205 11:23:16.202" endtime="20231205 11:23:16.203"/>
 </kw>
 <kw name="Set Log Level" library="BuiltIn">
 <var>${old_log_level}</var>
 <arg>NONE</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<status status="PASS" starttime="20231204 15:11:02.826" endtime="20231204 15:11:02.826"/>
-</kw>
-<kw name="POST On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>catapiSession</arg>
-<arg>${api_url}/favourites</arg>
-<arg>json=${favourite_to_add}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" starttime="20231204 15:11:02.826" endtime="20231204 15:11:03.535"/>
-</kw>
-<kw name="Set Log Level" library="BuiltIn">
-<arg>${old_log_level}</arg>
-<doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<msg timestamp="20231204 15:11:03.537" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231204 15:11:03.537" endtime="20231204 15:11:03.537"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>@{data}</var>
-<arg>json.loads('''${response.content}''')</arg>
-<arg>json</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231204 15:11:03.540" level="INFO">@{data} = [ message | id ]</msg>
-<status status="PASS" starttime="20231204 15:11:03.538" endtime="20231204 15:11:03.540"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${data}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231204 15:11:03.541" endtime="20231204 15:11:03.541"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${favourite_id_from_response}</var>
-<arg>${data}[1]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231204 15:11:03.542" level="INFO">${favourite_id_from_response} = id</msg>
-<status status="PASS" starttime="20231204 15:11:03.542" endtime="20231204 15:11:03.542"/>
-</kw>
-<kw name="Set Log Level" library="BuiltIn">
-<var>${old_log_level}</var>
-<arg>NONE</arg>
-<doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<status status="PASS" starttime="20231204 15:11:03.543" endtime="20231204 15:11:03.544"/>
+<status status="PASS" starttime="20231205 11:23:16.204" endtime="20231205 11:23:16.204"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>catapiSession</arg>
-<arg>${api_url}/images/search</arg>
-<arg>params=${favourite_id_from_response}</arg>
+<arg>${api_url}/favourites</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" starttime="20231204 15:11:03.545" endtime="20231204 15:11:03.915"/>
+<status status="PASS" starttime="20231205 11:23:16.204" endtime="20231205 11:23:16.996"/>
 </kw>
 <kw name="Set Log Level" library="BuiltIn">
 <arg>${old_log_level}</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<msg timestamp="20231204 15:11:03.916" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231204 15:11:03.916" endtime="20231204 15:11:03.918"/>
+<msg timestamp="20231205 11:23:16.997" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231205 11:23:16.997" endtime="20231205 11:23:16.997"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>@{data}</var>
 <arg>json.loads('''${response.content}''')</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231204 15:11:03.920" level="INFO">@{data} = [ {'breeds': [], 'id': 'eii', 'url': 'https://cdn2.thecatapi.com/images/eii.jpg', 'width': 640, 'height': 480} ]</msg>
-<status status="PASS" starttime="20231204 15:11:03.919" endtime="20231204 15:11:03.920"/>
+<msg timestamp="20231205 11:23:16.999" level="INFO">@{data} = [ {'id': 232423111, 'user_id': 'bnf0rc', 'image_id': 'g5', 'sub_id': None, 'created_at': '2023-12-04T12:56:55.000Z', 'image': {'id': 'g5', 'url': 'https://cdn2.thecatapi.com/images/g5.jpg'}} | {'id': ...</msg>
+<status status="PASS" starttime="20231205 11:23:16.998" endtime="20231205 11:23:16.999"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${cat_url}</var>
-<arg>${data}[0][url]</arg>
+<var>${latest_favourite_before_deleting}</var>
+<arg>${data}[-1][id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231204 15:11:03.922" level="INFO">${cat_url} = https://cdn2.thecatapi.com/images/eii.jpg</msg>
-<status status="PASS" starttime="20231204 15:11:03.921" endtime="20231204 15:11:03.922"/>
+<msg timestamp="20231205 11:23:17.000" level="INFO">${latest_favourite_before_deleting} = 232423114</msg>
+<status status="PASS" starttime="20231205 11:23:17.000" endtime="20231205 11:23:17.000"/>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${cat_url}</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231204 15:11:03.923" level="INFO">Opening browser 'Chrome' to base url 'https://cdn2.thecatapi.com/images/eii.jpg'.</msg>
-<status status="PASS" starttime="20231204 15:11:03.923" endtime="20231204 15:11:09.135"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${latest_favourite_before_deleting}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231205 11:23:17.001" endtime="20231205 11:23:17.001"/>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20231204 15:11:09.340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20231204 15:11:09.136" endtime="20231204 15:11:09.340"/>
+<kw name="Set Log Level" library="BuiltIn">
+<var>${old_log_level}</var>
+<arg>NONE</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<status status="PASS" starttime="20231205 11:23:17.002" endtime="20231205 11:23:17.002"/>
 </kw>
-<tag>favourite</tag>
-<status status="PASS" starttime="20231204 15:11:02.823" endtime="20231204 15:11:09.341"/>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>catapiSession</arg>
+<arg>${api_url}/favourites/${latest_favourite_before_deleting}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" starttime="20231205 11:23:17.003" endtime="20231205 11:23:17.362"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231205 11:23:17.363" endtime="20231205 11:23:17.364"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>catapiSession</arg>
+<arg>${api_url}/favourites</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" starttime="20231205 11:23:17.365" endtime="20231205 11:23:17.709"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>${old_log_level}</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20231205 11:23:17.710" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231205 11:23:17.710" endtime="20231205 11:23:17.710"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{data}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231205 11:23:17.712" level="INFO">@{data} = [ {'id': 232423111, 'user_id': 'bnf0rc', 'image_id': 'g5', 'sub_id': None, 'created_at': '2023-12-04T12:56:55.000Z', 'image': {'id': 'g5', 'url': 'https://cdn2.thecatapi.com/images/g5.jpg'}} | {'id': ...</msg>
+<status status="PASS" starttime="20231205 11:23:17.711" endtime="20231205 11:23:17.712"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${latest_favourite_after_deleting}</var>
+<arg>${data}[-1][id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231205 11:23:17.713" level="INFO">${latest_favourite_after_deleting} = 232423113</msg>
+<status status="PASS" starttime="20231205 11:23:17.713" endtime="20231205 11:23:17.713"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${latest_favourite_after_deleting}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231205 11:23:17.715" endtime="20231205 11:23:17.717"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<arg>${latest_favourite_after_deleting}</arg>
+<arg>${latest_favourite_before_deleting}</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="PASS" starttime="20231205 11:23:17.718" endtime="20231205 11:23:17.719"/>
+</kw>
+<tag>delete favourite</tag>
+<status status="PASS" starttime="20231205 11:23:16.202" endtime="20231205 11:23:17.719"/>
 </test>
-<status status="PASS" starttime="20231204 15:11:02.624" endtime="20231204 15:11:09.343"/>
+<status status="PASS" starttime="20231205 11:23:16.014" endtime="20231205 11:23:17.721"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">favourite</stat>
+<stat pass="1" fail="0" skip="0">delete favourite</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="02 Cat-Api">02 Cat-Api</stat>
